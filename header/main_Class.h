@@ -1,3 +1,3 @@
 /** Declaration file */
-#include "main_Class.cpp"
+#include "../cpp/main_Class.cpp"
 class Storage;

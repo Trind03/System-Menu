@@ -3,7 +3,7 @@
 /** System CLI Menu*/
 #include <iostream>
 #include <string>
-#include "main_Class.h"
+#include "./header/main_Class.h"
 
 /** Macro declaration */
 #define Sucsess_Exit_Code 0
@@ -17,30 +17,51 @@ int main()
     while(storage->main_loop)
     {
         std::cout << "SYSTEM-CLI-MENU" << std::endl;
-        std::cout << "System hardware info: S" << std::endl;
-        std::cout << "System shutdown: A" << std::endl << std::endl;
+        std::cout << "System hardware info: I" << std::endl;
+        std::cout << "System shutdown: S" << std::endl;
+        std::cout << "Cancel system shutdown: C" << std::endl;
+        std::cout << "Terminate: T" << std::endl << std::endl;
         std::cout << "Field: ";
         std::cin >> storage->user_Input;
 
-        if(storage->user_Input == "S")
+        if(storage->user_Input == "I" || storage->user_Input == "i")
         {
             storage->clear();
             system("systeminfo");
         }
-        else if(storage->user_Input == "A")
+        else if(storage->user_Input == "S" || storage->user_Input == "s")
         {
             storage->clear();
             std::cout << "Shutdown command executing.. ";
+            system("shutdown -s -t 600");
             system("pause>0");
+        }
+
+        else if(storage->user_Input == "C" || storage->user_Input == "c")
+        {
+            storage->clear();
+            std::cout << "Shutdown command executing.. ";
+            system("shutdown -a");
+            system("pause>0");
+        }
+
+        else if(storage->user_Input == "T" || storage->user_Input == "t")
+        {
+            storage->clear();
+            std::cout << "Terminating software..";
+            delete(storage);
+            return Sucsess_Exit_Code;
         }
 
         else
         {
             std::cout << "Error invalid input";
             system("pause>0");
+            delete(storage);
             return Error_Exit_Code;
         }
 
     }
+    delete(storage);
     return Sucsess_Exit_Code;
 }

@@ -31,5 +31,5 @@ class Storage
     
 };
 
-void clear()
+void Storage::clear()
 {system("clear");}
