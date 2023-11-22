@@ -2,7 +2,7 @@
 
 class Storage
 {
-    public:
+public:
     /** Storage */
     bool main_loop;
     unsigned int cycles;
