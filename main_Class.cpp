@@ -1,6 +1,6 @@
 #pragma once
 
-class storage
+class Storage
 {
     public:
     /** Storage */
@@ -12,17 +12,16 @@ class storage
     /** Methods */
 
     void clear();
-    void main_menu(storage &ref);
 
 // public:
-    storage(bool Loop,int Cycles): main_loop(Loop),cycles(Cycles)
+    Storage(bool Loop,int Cycles): main_loop(Loop),cycles(Cycles)
     {
         std::cout << "Loading up.." << std::endl;
         system("clear");
     }
 
 
-    ~storage()
+    ~Storage()
     {
         std::cout << "Deleting.." << std::endl;
         main_loop = 0;
@@ -31,11 +30,6 @@ class storage
     }
     
 };
-
-void main_menu(storage &ref)
-{
-    std::cout << ref.title;
-}
 
 void clear()
 {system("clear");}
