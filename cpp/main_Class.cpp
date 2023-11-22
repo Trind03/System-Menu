@@ -17,7 +17,7 @@ public:
     Storage(bool Loop,int Cycles): main_loop(Loop),cycles(Cycles)
     {
         std::cout << "Loading up.." << std::endl;
-        system("clear");
+        clear();
     }
 
 
@@ -32,4 +32,4 @@ public:
 };
 
 void Storage::clear()
-{system("clear");}
+{system("cls");}
