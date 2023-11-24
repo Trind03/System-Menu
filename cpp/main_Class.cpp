@@ -4,11 +4,14 @@
 
 class Storage
 {
+private:
     /** Storage */
     bool main_loop;
     unsigned int cycles;
     std::string user_Input;
     std::string title = "System-Menu";
+    void clear()
+    {system("cls");}
 
 public:
     Storage(bool Loop,int Cycles): main_loop(Loop),cycles(Cycles)
@@ -18,8 +21,6 @@ public:
     }
 
     int main_Loop();
-    void clear()
-    {system("cls");}
 
     ~Storage()
     {
@@ -80,6 +81,7 @@ int Storage::main_Loop()
         {
             std::cout << "Error invalid input";
             system("pause");
+            
             return Error_Exit_Code;
         }
 
