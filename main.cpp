@@ -1,8 +1,8 @@
-/** Software - by - Torstein */
+/* Software - by - Torstein */
 #include <iostream>
 #include <string>
 #include "./header/main_Class.h"
-
+#define Version 2.2
 
 
 int main()
