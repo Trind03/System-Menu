@@ -4,7 +4,6 @@
 #include "./header/main_Class.h"
 #define Version 2.2
 
-
 int main()
 {
     Storage *Ptr = new Storage(true,0);
