@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include <string>
 #define Sucsess_Exit_Code 0
 #define Error_Exit_Code 1
 
@@ -7,29 +9,19 @@ class Storage
 private:
     /** Storage */
     bool main_loop;
-    unsigned int cycles;
     std::string user_Input;
     std::string title = "System-Menu";
     void clear()
     {system("cls");}
 
 public:
-    Storage(bool Loop,int Cycles): main_loop(Loop),cycles(Cycles)
+    Storage(bool Loop =true): main_loop(Loop)
     {
         std::cout << "Loading up.." << std::endl;
         clear();
     }
 
     int main_Loop();
-
-    ~Storage()
-    {
-        std::cout << "Freeing up allocaded memory.." << std::endl;
-        main_loop = 0;
-        cycles = 0;
-        user_Input = "0";
-    }
-    
 };
 
 int Storage::main_Loop()
@@ -84,7 +76,6 @@ int Storage::main_Loop()
             
             return Error_Exit_Code;
         }
-
     }
     return Sucsess_Exit_Code;
 }
